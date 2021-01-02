@@ -2,9 +2,9 @@ import { LightningElement } from 'lwc';
 import Tabletop from 'tabletop';
 
 const columns = [
-    { label: 'Nombre', fieldName: 'nombre' },
+    { label: 'Nombre', fieldName: 'nombre', wrapText: true },
     { label: 'Telefono', fieldName: 'telefono', type: 'phone' },
-    { label: 'Notas', fieldName: 'notas' }
+    { label: 'Notas', fieldName: 'notas', wrapText: true }
 ];
 export default class App extends LightningElement {
     columns = columns;
