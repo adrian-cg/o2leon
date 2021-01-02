@@ -9,6 +9,7 @@ const columns = [
 export default class App extends LightningElement {
     columns = columns;
     data = [];
+    loading = true;
 
     connectedCallback() {
         Tabletop.init({
@@ -17,6 +18,7 @@ export default class App extends LightningElement {
             simpleSheet: true
         }).then((data) => {
             this.data = data.filter((row) => row.telefono);
+            this.loading = false;
         });
     }
 }

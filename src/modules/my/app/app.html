@@ -16,6 +16,11 @@
                     class="slds-table_striped"
                 ></lightning-datatable>
             </div>
+            <template if:true={loading}>
+                <lightning-spinner
+                    alternative-text="Cargando proveedores"
+                ></lightning-spinner>
+            </template>
         </lightning-card>
     </main>
 </template>
