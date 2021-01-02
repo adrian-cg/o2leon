@@ -1,6 +1,6 @@
 # o2leon
 
-Here will be some information about the app.
+A LWC application that pulls data from a google sheet of oxygen tank/concentrator providers in Leon, Guanajuato. Idea on how to use google sheets as a data source grabbed from [this article](https://css-tricks.com/creating-an-editable-webpage-with-google-spreadsheets-and-tabletop-js/).
 
 ## How to start?
 
