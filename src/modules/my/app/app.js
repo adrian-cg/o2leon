@@ -14,7 +14,7 @@ export default class App extends LightningElement {
     connectedCallback() {
         Tabletop.init({
             key:
-                'https://docs.google.com/spreadsheets/d/1aLqw2lTVpYHAW1LPtnrQ9w3cgSXDHFP_Ot1CDfEX9zM/edit?usp=sharing',
+                'https://docs.google.com/spreadsheets/d/1oaZEZPYqGilg1LZ0fA5quFqwPGXHzNW7BqBxPUPQkZU/edit?usp=sharing',
             simpleSheet: true
         }).then((data) => {
             this.data = data.filter((row) => row.telefono);
