@@ -1,5 +1,5 @@
 import { LightningElement } from 'lwc';
-import Tabletop from 'tabletop';
+import Papa from 'papaparse';
 
 const columns = [
     { label: 'Nombre', fieldName: 'nombre', wrapText: true },
@@ -12,13 +12,15 @@ export default class App extends LightningElement {
     loading = true;
 
     connectedCallback() {
-        Tabletop.init({
-            key:
-                'https://docs.google.com/spreadsheets/d/1hSkboH2aA3CgCCfDgPehdNALyo2hoObLVM53GbHUCOQ/edit?usp=sharing',
-            simpleSheet: true
-        }).then((data) => {
-            this.data = data.filter((row) => row.telefono);
-            this.loading = false;
+        let sheetId = '1hSkboH2aA3CgCCfDgPehdNALyo2hoObLVM53GbHUCOQ';
+        let sheetUrl = `https://docs.google.com/spreadsheets/d/${sheetId}/pub?output=csv`;
+        Papa.parse(sheetUrl, {
+            download: true,
+            header: true,
+            complete: ({ data }) => {
+                this.data = data.filter((row) => row.telefono);
+                this.loading = false;
+            }
         });
     }
 }
